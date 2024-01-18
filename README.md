@@ -16,18 +16,23 @@ Para executar o projeto localmente, siga estes passos:
 ```bash!
 git clone https://github.com/JulyNRocha/NunesSportCRUD.git
 ```
-2. **Instale as Dependências:**
+2. **Ir até o diretorio do projeto na pasta server**
+
+```bash!
+cd server
+```   
+3. **Instale as Dependências:**
 
 ```bash!
 npm install
 ```
-3. **Configure o Banco de Dados:**
+4. **Configure o Banco de Dados:**
 
 * Certifique-se de ter o MySQL instalado e em execução.
 * Crie um banco de dados chamado nunesdb.
 * Adapte as configurações de conexão do banco de dados no arquivo do projeto conforme necessário.
 
-## Inicie o Servidor:
+5. ## Inicie o Servidor:
 
 ```bash!
 npm start
