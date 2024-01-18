@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nunes Sports</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container p-0">
+        <div class="header px-4 mb-4 text-center">
+            <a href="/" class="logo mb-0">Nunes Sports</a>
+        </div>
+
+        <div class="rowContainer p-4">
+            <div class="titleContainer mb-4 d-flex align-items-center justify-content-between">
+                <div>
+                    <h1 class="mb-0">Adicionar novo produto</h1>
+                    <p class="mb-0">Preencha os dados abaixo para inserir um novo produto</p>
+                </div>
+
+                <a href="/" class="btn btn-outline-primary generalButton">Voltar</a>
+            </div>
+
+            <% if (typeof message !== 'undefined') { %>
+                <div class="my-5 alert alert-<%= message.type %>"><%= message.text %></div>
+            <% } %>
+
+            <div class="contentContainer">
+                <form action="/add" method="POST">
+                    <div class="d-grid">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Nome do produto" name="nome" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="codigo">Código:</label>
+                            <input type="text" class="form-control" id="codigo" placeholder="Código identificador do produto" name="codigo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preco">Preço:</label>
+                            <input type="text" class="form-control" id="preco" placeholder="R$1000" name="preco" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição:</label>
+                        <textarea class="form-control" id="descricao" name="descricao" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mt-3">Adicionar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var inputPreco = document.getElementById('preco');
+
+            inputPreco.addEventListener('input', function() {
+                var value = this.value.replace(/^R\$\s?/, '');
+                this.value = value ? `R$ ${value}` : '';
+            });
+
+            inputPreco.addEventListener('blur', function() {
+                var value = this.value.replace(/^R\$\s?/, '');
+                this.value = value ? `R$ ${value}` : '';
+            });
+
+            inputPreco.addEventListener('focus', function() {
+                var value = this.value.replace(/^R\$\s?/, '');
+                this.value = value;
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
