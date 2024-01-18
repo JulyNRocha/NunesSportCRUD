@@ -14,7 +14,7 @@ Para executar o projeto localmente, siga estes passos:
 1. **Clone o Repositório:**
 
 ```bash!
-git clone [URL_DO_REPOSITORIO]
+git clone https://github.com/JulyNRocha/NunesSportCRUD.git
 ```
 2. **Instale as Dependências:**
 
